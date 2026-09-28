@@ -82,4 +82,10 @@ public class SequentialRangeSummarizerTest {
                 summarizer.summarizeCollection(Arrays.asList(Integer.MAX_VALUE - 1, Integer.MAX_VALUE)));
     }
 
+
+    @Test
+    void collect_outOfRangeValue_throws() {
+        assertThrows(IllegalArgumentException.class, () -> summarizer.collect("99999999999"));
+    }
+
 }
